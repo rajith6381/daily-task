@@ -1,11 +1,11 @@
 .container{
-	width:65%;
+	width:85%;
 	margin:auto;
 	
 }
 section{
 	width:100%;
-	height:100vh;
+	height:80vh;
 	padding-top:10%;
 }
 .baner{
@@ -26,4 +26,61 @@ section{
 .box img{
 	width:35%;
 	filter:grayscale(100%);
+}
+.section2{
+	width:100%;
+	height:100vh;
+	
+}
+.hpara{
+	width:80%;
+	height:100vh;
+	
+}
+.hole{
+	width:100%;
+	height:100vh;
+	background:#EAEDED ;
+	display:flex;
+	justify-content:center;
+}
+.heading{
+	width:100%;
+	height:20vh;
+	align-items:center;
+}
+.heading h3{
+	position:relative;
+	text-align:center;
+	font-family:sans-serif;
+}
+.heading p{
+	padding-top:10px;
+	text-align:center;
+}
+
+.line2::after{
+	position:absolute;
+	content:"";
+	width: 50px;
+    height: 3px;
+    background:yellow;
+	 margin-left:30%;
+   
+}
+.para{
+	width:100%;
+	height:80vh;
+	
+}
+.para1{
+	width:100%;
+	height:10vh;
+	display:flex;
+}
+.para3{
+	width:60%;
+}
+.para2{
+	width:40%;
 }
