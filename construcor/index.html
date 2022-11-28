@@ -237,20 +237,20 @@
        //2 0|1 0|2 1|1 1|2 2|1 2
        //2 0|2 0|2 1|2 1|2 2|2 2
        
-      b=[0,0,0,0,0,0,0,0,0]
-     for(i=0;i<3;i++){
-        var add=0;
-        for(j=0;j<3;j++){
-            for(k=0;k<3;k++){
-                // console.log(j+","+i+","+k+','+i+","+j+","+i+","+k+","+i+","+j+","+i+","+k+","+i);
-           b[add]+=multi3[j][i]*multi4[k][i]
-           add++
-            }
-        }
+//       b=[0,0,0,0,0,0,0,0,0]
+//      for(i=0;i<3;i++){
+//         var add=0;
+//         for(j=0;j<3;j++){
+//             for(k=0;k<3;k++){
+//                 // console.log(j+","+i+","+k+','+i+","+j+","+i+","+k+","+i+","+j+","+i+","+k+","+i);
+//            b[add]+=multi3[j][i]*multi4[k][i]
+//            add++
+//             }
+//         }
 
-     }
+//      }
 
-console.log(b);
+// console.log(b);
 //   console.log(arr);
     
 
@@ -297,6 +297,60 @@ console.log(b);
 //        total = a-b-b;
 //    }
 // }
+
+
+//                                 "" ("abc")
+//                  "a"("bc")      ||       "b"("ac")       || "c"("ab")
+//          "ac"("b")||"ab" ("c")  || "ba"("c") || "bc"("a")|| "ca"("b") || "cb"("a")  
+//          "acb"()  ||"abc"()     || "bac"()   || "bca"()    || "cab"()   || "cba"()     
+
+
+// "abc"
+
+// "a" | "bc" || "ab" | "c" || "abc"
+//               "ac" | "b" || "acb"
+
+// "b" | "ac" || "ba" | "c"  || "bac"
+//               "bc" | "a"  || "bca"
+
+// "c" | "ba" || "cb" | "a"  || "cba"
+//               "ca" | "b"  || "cab" 
+
+
+
+     //"abc"
+//"a" || "ab"||"b"
+//"c" ||"bc" ||
+
+
+
+let res = [];
+
+function multiple(str1,str){
+    str.forEach((char,i) => {
+        res.push(str1+char);
+        multiple(str1+char,copy(str,i));
+    });
+}
+
+// copy(["a","b","c","d","e"],0);
+// ["b","c","d","e"]
+
+function copy(array,i){
+    let a2 = [];
+    array.forEach((x,j) => {
+        if(i != j){
+            a2.push(x)
+        }
+    });
+    return a2;
+}
+
+var chars = prompt("Enter your choose : ");
+
+// multiple([],["a","b","c"]);
+multiple([],chars.split(''));
+console.log(res);
     </script>
 </body>
 </html>
